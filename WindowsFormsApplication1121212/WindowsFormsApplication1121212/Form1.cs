@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1121212
 
     VALUES('{textBox3.Text}', '{textBox1.Text}', '{textBox2.Text}', '{textBox4.Text}', '{textBox5.Text}',
 '{textBox6.Text}', '{textBox7.Text}', '{textBox8.Text}', '{getSex()}', '{getFamily_status()}', '{textBox9.Text}', 
-'{textBox10.Text}', '{getPassportID()}', '', NOW(), NOW(), '', '', '', 0, 0, NOW(), '', '', '', '', '', 0, '', 0, NOW(), NOW(), 0, NOW(), '', NOW(), NOW(), NOW(), NOW(), '', '', '', '', '', '', '', '', '', '', NOW(), '', '', '', NOW(), '', '')";
+'{textBox10.Text}', '{getPassportID()}', '{textBox14.Text}', NOW(), NOW(), '', '', '', 0, 0, NOW(), '', '', '', '', '', 0, '', 0, NOW(), NOW(), 0, NOW(), '', NOW(), NOW(), NOW(), NOW(), '', '', '', '', '', '', '', '', '', '', NOW(), '', '', '', NOW(), '', '')";
 
             MySqlCommand command = new MySqlCommand(query, conn);
             command.ExecuteNonQuery();
@@ -60,7 +60,7 @@ namespace WindowsFormsApplication1121212
                     return rad.Text;
                 }
             }
-            return "NOSEX";
+            return "";
         } 
 
         public string getFamily_status ()
@@ -71,7 +71,7 @@ namespace WindowsFormsApplication1121212
 
                 if (rad.Checked)
                 {
-                    status += rad.Text;
+                    status += rad.Text+";";
                 }
             }
 
@@ -87,7 +87,7 @@ namespace WindowsFormsApplication1121212
 
                 if (rad.Checked)
                 {
-                    result += rad.Text;
+                    result += rad.Text+";";
                 }
             }
 
