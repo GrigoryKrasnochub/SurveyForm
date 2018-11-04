@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1121212
 
         private void doInsert()
         {
-            string connectionStr = "server=localhost;user=root;database=university_lab;";
+            string connectionStr = "server=localhost;user=root;database=university_lab;password=root;";
             MySqlConnection conn = new MySqlConnection(connectionStr);
             conn.Open();
 
