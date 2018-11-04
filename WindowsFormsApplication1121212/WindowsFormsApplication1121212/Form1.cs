@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1121212
 
         private void doInsert()
         {
-            string connectionStr = "server=localhost;user=root;database=university_lab;password=root;";
+            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;";
             MySqlConnection conn = new MySqlConnection(connectionStr);
             conn.Open();
 
@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1121212
 
     VALUES('{textBox3.Text}', '{textBox1.Text}', '{textBox2.Text}', '{textBox4.Text}', '{textBox5.Text}',
 '{textBox6.Text}', '{textBox7.Text}', '{textBox8.Text}', '{getSex()}', '{getFamily_status()}', '{textBox9.Text}', 
-'', '', '', NOW(), NOW(), '', '', '', 0, 0, NOW(), '', '', '', '', '', 0, '', 0, NOW(), NOW(), 0, NOW(), '', NOW(), NOW(), NOW(), NOW(), '', '', '', '', '', '', '', '', '', '', NOW(), '', '', '', NOW(), '', '')";
+'{textBox10.Text}', '{getPassportID()}', '', NOW(), NOW(), '', '', '', 0, 0, NOW(), '', '', '', '', '', 0, '', 0, NOW(), NOW(), 0, NOW(), '', NOW(), NOW(), NOW(), NOW(), '', '', '', '', '', '', '', '', '', '', NOW(), '', '', '', NOW(), '', '')";
 
             MySqlCommand command = new MySqlCommand(query, conn);
             command.ExecuteNonQuery();
@@ -78,7 +78,29 @@ namespace WindowsFormsApplication1121212
             return status;
         }
 
+        public string getPassportID()
+        {
+            string result = "";
+
+            foreach (CheckBox rad in groupBox3.Controls.OfType<CheckBox>())
+            {
+
+                if (rad.Checked)
+                {
+                    result += rad.Text;
+                }
+            }
+
+            return result;
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }
