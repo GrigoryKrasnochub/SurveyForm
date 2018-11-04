@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label42.Text" xml:space="preserve">
+    <value>*31. Фамилия/-и, имя (имена) лица, приглашающего в государство/-а Шенгенского соглашения. В случае отсутствия такового 
+– название гостиницы (гостиниц) или адрес /-а временного пребывания на территории государств-участников Шенгенского 
+соглашения:
+</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>Применяется, если запрашивается виза на многократный въезд (см. пункт 24):
+Я информирован/а, что для первого моего пребывания и последующих посещений территории стран-участников требуется 
+соответствующая медицинская страховка.</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>Я информирован/-а и согласен/-на с тем, что предоставление мною моих личных данных, востребованных в настоящей анкете, 
+фотографирование и, в случае необходимости, снятие отпечатков пальцев является обязательным для рассмотрения заявления 
+на визу; все личные данные, относящиеся ко мне и предоставленные в визовой анкете, будут переданы компетентным органам 
+государств-участников Шенгенского соглашения и будут ими обработаны для принятия решения по моему заявлению. Эти 
+данные, как и данные о решении, принятом по моему заявлению, или о решении аннулировать, отменить или продлить уже 
+выданную визу, будут введены и сохранены в Визовой информационной системе (VIS)1 на максимальный срок пять лет и в этот 
+период будут доступны государственным учреждениям и службам, в компетенцию которых входит производить проверку виз на 
+внешних границах шенгенской зоны и в ее странах-участниках, а также иммиграционным службам и учреждениям 
+предоставляющим убежище, с целью удостовериться, соблюдаются ли требования по законному въезду, пребыванию и 
+проживанию на территории стран-участников, а также для опознания лиц, которые не соответствуют или стали не 
+соответствовать этим требованиям, для рассмотрения прошений о предоставлении убежища и определения ответственности за
+подобное рассмотрение. На некоторых условиях данные будут доступны также определенным службам государств-участников 
+и Европолу для предотвращения, раскрытия и расследования правонарушений, связанных с терроризмом, и других тяжких 
+преступлений. Государственным учреждением, ответственным за обработку данных, является: Федеральное ведомство D-50728 
+Кёльн, visa @ bva . bund . de . Мне известно, что в любом государстве-участнике я имею право получить уведомление о данных, 
+касающихся меня и введенных в (VIS), и о государстве-участнике, предоставившем такие данные, а также требовать исправления 
+неверных данных, касающихся меня, и удаления моих личных данных, обработанных противозаконно. По моему особому запросу 
+учреждение, оформляющее мое заявление, сообщит мне о способе осуществления моего права на проверку личных данных обо 
+мне, а также на исправление или удаление данных в порядке, установленном национальным законодательством соответствующего 
+государства. Ответственное за надзор учреждение соответствующего государства-участника: Федеральный уполномоченный по 
+защите данных и свободы слова, Husarenstrase 30, D-53117 Бонн, тел.: +49 (0)228-997799-0, факс: +49 (0)228-997799-550, poststelle 
+@ bfdi . bund . de , www . bfdi . bund . de Я заверяю, что все данные, добросовестно указанные мною в анкете, являются 
+правильными и полными. Мне известно, что ложные данные могут стать причиной отказа или аннулирования уже выданной визы, 
+а также повлечь за собой уголовное преследование в соответствии с законодательством того государства-участника Шенгенского 
+соглашения, которое оформляет мою визовую анкету. Если виза будет выдана, я обязуюсь покинуть территорию государств-
+участников Шенгенского соглашения по истечении срока действия визы. Я информирован/-а о том, что наличие визы является 
+лишь одним из условий, необходимых для въезда на европейскую территорию государств-участников Шенгенского соглашения. 
+Сам факт предоставления визы не дает права на получение компенсации в случае невыполнения мною требований пункта 1 
+статьи 5 Регламента (ЕК) №562/2006 (Шенгенского кодекса о границах), вследствие чего мне могут отказать во въезде в страну. 
+При въезде на европейскую территорию государств-участников Шенгенского соглашения вновь проверяется наличие 
+необходимых на то предпосылок.  </value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>В соответствии с абзацем 1 § 55 в сочетании с пунктом 1 абзаца 2 § 55 Закона о пребывании (AufenthG) предусматривается, что
+иностранец / иностранка может быть выдворена из Германии, если он / она в ходе процедуры получения визы (в том числе и по
+отношению к ведомствам другого государства-участника Шенгенского соглашения) указал/а ложные или неполные данные с целью
+получения разрешения на пребывание.
+
+Заявитель / заявительница обязан/а добросовестно указать все данные. Указание заведомо ложных или неполных данных могут
+повлечь за собой отклонение заявления о выдаче визы или выдворение заявителя / заявительницы из Германии, если виза уже была
+выдана.
+
+Своей подписью заявитель / заявительница подтверждает получение разъяснений о правовых последствиях указания ложных или
+неполных данных в ходе процедуры получения визы.</value>
+  </data>
+</root>
