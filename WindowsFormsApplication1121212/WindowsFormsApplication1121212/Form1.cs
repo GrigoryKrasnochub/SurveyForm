@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -38,7 +39,7 @@ namespace WindowsFormsApplication1121212
 
     VALUES('{textBox3.Text}', '{textBox1.Text}', '{textBox2.Text}', '{textBox4.Text}', '{textBox5.Text}',
 '{textBox6.Text}', '{textBox7.Text}', '{textBox8.Text}', '{getSex()}', '{getFamily_status()}', '{textBox9.Text}', 
-'{textBox10.Text}', '{getPassportID()}', '{textBox14.Text}', NOW(), NOW(), '', '', '', 0, 0, NOW(), '', '', '', '', '', 0, '', 0, NOW(), NOW(), 0, NOW(), '', NOW(), NOW(), NOW(), NOW(), '', '', '', '', '', '', '', '', '', '', NOW(), '', '', '', NOW(), '', '')";
+'{textBox10.Text}', '{getPassportID()}', '{textBox14.Text}', '{DateFormater(textBox15.Text)}', NOW(), '', '', '', 0, 0, NOW(), '', '', '', '', '', 0, '', 0, NOW(), NOW(), 0, NOW(), '', NOW(), NOW(), NOW(), NOW(), '', '', '', '', '', '', '', '', '', '', NOW(), '', '', '', NOW(), '', '')";
 
             MySqlCommand command = new MySqlCommand(query, conn);
             command.ExecuteNonQuery();
@@ -61,7 +62,26 @@ namespace WindowsFormsApplication1121212
                 }
             }
             return "";
-        } 
+        }
+        
+        public string DateFormater( string str)
+        {
+            DateTime result;
+            string str_res = "";
+
+            try
+            {
+                result = DateTime.ParseExact(str, "dd.MM.yyyy", CultureInfo.GetCultureInfo("ru-RU"));
+                str_res= String.Format("{0:yyyy-MM-dd}", result);  
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Дата должна быть задана в формате дд.мм.гггг");
+            }
+
+
+            return str_res;
+        }
 
         public string getFamily_status ()
         {
