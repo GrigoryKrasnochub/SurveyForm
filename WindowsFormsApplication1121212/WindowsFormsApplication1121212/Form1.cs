@@ -132,8 +132,13 @@ namespace WindowsFormsApplication1121212
             }
             catch (Exception e)
             {
+                if (!correctDate)
+                {
+                    MessageBox.Show("Дата должна быть задана в формате дд.мм.гггг");
+                }
                 correctDate = true;
-                MessageBox.Show("Дата должна быть задана в формате дд.мм.гггг");
+
+                
             }
 
 
