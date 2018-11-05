@@ -143,7 +143,7 @@ namespace WindowsFormsApplication1121212
         private string GetFingersPrint()
         {
             string status = "";
-            foreach (RadioButton rad in groupBox7.Controls.OfType<RadioButton>())
+            foreach (RadioButton rad in groupBox8.Controls.OfType<RadioButton>())
             {
 
                 if (rad.Checked)
