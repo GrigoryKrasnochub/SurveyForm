@@ -12,13 +12,21 @@ namespace WindowsFormsApplication1121212
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        private List<string [] > datas = new List<string []>();
+
+        public Form2(List<string []> datas)
         {
+            this.datas = datas;
             InitializeComponent();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            foreach (string [] name in datas) {
+
+                ListViewItem lvi = new ListViewItem(name);
+                listView1.Items.Add(lvi);
+            }
             
         }
     }

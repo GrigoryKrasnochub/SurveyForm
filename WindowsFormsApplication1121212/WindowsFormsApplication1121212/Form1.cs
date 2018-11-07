@@ -56,14 +56,13 @@ namespace WindowsFormsApplication1121212
             conn.Close();
         }
 
-        private List<string> doSelect(string surname)
+        private List<string [] > doSelect(string surname)
         {
             string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;";
 
             string query = $@"SELECT * FROM Forms WHERE surname='{surname}'";
 
-            string result = "";
-            List<string> resultList = new List<string>();
+            List<string []> resultList = new List<string []>();
             MySqlConnection conn = new MySqlConnection(connectionStr);
             MySqlCommand myCommand = new MySqlCommand(query, conn);
             conn.Open();
@@ -73,7 +72,14 @@ namespace WindowsFormsApplication1121212
 
             while (MyDataReader.Read())
             {
-               resultList.Add(MyDataReader.GetString(1)); //Получаем строку
+                string[] str = new string[5];
+                str[0] = MyDataReader.GetString(1); //Имя
+                str[1] = MyDataReader.GetString(2); //Фамилия
+                str[2] = MyDataReader.GetString(4); //День рождения
+                str[3] = MyDataReader.GetString(13); //Проездной документ
+                str[4] = MyDataReader.GetString(14); //Номер проездного
+
+                resultList.Add(str); //Получаем строку
             }
             MyDataReader.Close();
 
@@ -215,15 +221,11 @@ namespace WindowsFormsApplication1121212
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string result = "";
-            foreach (string s in doSelect(textBox1.Text))
-            {
-                result += s.ToString();
+            foreach (string [] str in doSelect(textBox1.Text)){
+                textBox9.AppendText(str[0]);
             }
-            textBox9.Text = result;
-            Form2 form = new Form2();
+            Form2 form = new Form2(doSelect(textBox1.Text));
             form.ShowDialog();
-
 
         }
     }

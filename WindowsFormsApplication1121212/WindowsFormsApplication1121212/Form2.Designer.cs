@@ -29,7 +29,12 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader0 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // button1
@@ -37,26 +42,60 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button1.Location = new System.Drawing.Point(0, 599);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(800, 36);
+            this.button1.Size = new System.Drawing.Size(860, 36);
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // listView1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(190, 189);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(255, 184);
-            this.listBox1.TabIndex = 2;
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader0,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(860, 593);
+            this.listView1.TabIndex = 2;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader0
+            // 
+            this.columnHeader0.Text = "Имя";
+            this.columnHeader0.Width = 125;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Фамилия";
+            this.columnHeader1.Width = 137;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Дата рождения";
+            this.columnHeader2.Width = 146;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Проездной документ";
+            this.columnHeader3.Width = 182;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Номер проездного документа";
+            this.columnHeader4.Width = 253;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 635);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(860, 635);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -67,6 +106,11 @@
 
         #endregion
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader0;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }
