@@ -221,9 +221,7 @@ namespace WindowsFormsApplication1121212
 
         private void button2_Click(object sender, EventArgs e)
         {
-            foreach (string [] str in doSelect(textBox1.Text)){
-                textBox9.AppendText(str[0]);
-            }
+
             Form2 form = new Form2(doSelect(textBox1.Text));
             form.ShowDialog();
 
