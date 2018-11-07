@@ -49,11 +49,36 @@ namespace WindowsFormsApplication1121212
 '{GetInfoFromRadioButton(groupBox13.Controls.OfType<RadioButton>())}', '{textBox46.Text}', '{textBox47.Text}', '{textBox48.Text}', '{textBox51.Text}','{textBox49.Text}', '{textBox50.Text}')";
 
             if (correctDate) {
-                return;
+               // return;
             }
             MySqlCommand command = new MySqlCommand(query, conn);
             command.ExecuteNonQuery();
             conn.Close();
+        }
+
+        private List<string> doSelect(string surname)
+        {
+            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;";
+
+            string query = $@"SELECT * FROM Forms WHERE surname='{surname}'";
+
+            string result = "";
+            List<string> resultList = new List<string>();
+            MySqlConnection conn = new MySqlConnection(connectionStr);
+            MySqlCommand myCommand = new MySqlCommand(query, conn);
+            conn.Open();
+
+            MySqlDataReader MyDataReader;
+            MyDataReader = myCommand.ExecuteReader();
+
+            while (MyDataReader.Read())
+            {
+               resultList.Add(MyDataReader.GetString(1)); //Получаем строку
+            }
+            MyDataReader.Close();
+
+            conn.Close();
+            return resultList;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -186,6 +211,20 @@ namespace WindowsFormsApplication1121212
             {
                 e.Handled = true;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string result = "";
+            foreach (string s in doSelect(textBox1.Text))
+            {
+                result += s.ToString();
+            }
+            textBox9.Text = result;
+            Form2 form = new Form2();
+            form.ShowDialog();
+
+
         }
     }
 }
