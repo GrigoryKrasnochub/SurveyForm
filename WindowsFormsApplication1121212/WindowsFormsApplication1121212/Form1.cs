@@ -49,8 +49,9 @@ namespace WindowsFormsApplication1121212
 '{GetInfoFromRadioButton(groupBox13.Controls.OfType<RadioButton>())}', '{textBox46.Text}', '{textBox47.Text}', '{textBox48.Text}', '{textBox51.Text}','{textBox49.Text}', '{textBox50.Text}')";
 
             if (correctDate) {
-               // return;
+                return;
             }
+
             MySqlCommand command = new MySqlCommand(query, conn);
             command.ExecuteNonQuery();
             conn.Close();
@@ -72,12 +73,15 @@ namespace WindowsFormsApplication1121212
 
             while (MyDataReader.Read())
             {
-                string[] str = new string[5];
+                string[] str = new string[8];
                 str[0] = MyDataReader.GetString(1); //Имя
                 str[1] = MyDataReader.GetString(2); //Фамилия
                 str[2] = MyDataReader.GetString(4); //День рождения
                 str[3] = MyDataReader.GetString(13); //Проездной документ
                 str[4] = MyDataReader.GetString(14); //Номер проездного
+                str[5] = MyDataReader.GetString(26); //Страна назначения
+                str[6] = MyDataReader.GetMySqlDateTime(38).ToString(); //Дата въезда
+                str[7] = MyDataReader.GetMySqlDateTime(39).ToString(); //Дата выезда
 
                 resultList.Add(str); //Получаем строку
             }
@@ -125,7 +129,7 @@ namespace WindowsFormsApplication1121212
             try
             {
                 result = DateTime.ParseExact(str, "dd.MM.yyyy", CultureInfo.GetCultureInfo("ru-RU"));
-                str_res= String.Format("{0:yyyy-MM-dd}", result);
+                str_res = String.Format("{0:yyyy-MM-dd}", result);
 
             }
             catch (Exception e)
