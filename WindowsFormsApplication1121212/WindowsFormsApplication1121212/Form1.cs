@@ -77,7 +77,14 @@ namespace WindowsFormsApplication1121212
                 for (int i = 0; i < str.Length; i++)
                 //for (int i = 0; i < 14; i++)
                 {
-                    str[i] = MyDataReader.GetString(i).ToString();
+                    try
+                    {
+                        str[i] = MyDataReader.GetString(i);
+                    }
+                    catch (MySql.Data.Types.MySqlConversionException)
+                    {
+                        str[i] = "";
+                    }
                 }
                 resultList.Add(str); //Получаем строку
             }
