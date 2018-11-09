@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1121212
 
         private void doInsert()
         {
-            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;";
+            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;password=root;";
             MySqlConnection conn = new MySqlConnection(connectionStr);
             conn.Open();
 
@@ -59,7 +59,7 @@ namespace WindowsFormsApplication1121212
 
         private List<string [] > doSelect(string surname)
         {
-            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;";
+            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;password=root;";
 
             string query = $@"SELECT * FROM Forms WHERE surname='{surname}'";
 
@@ -84,6 +84,31 @@ namespace WindowsFormsApplication1121212
                 str[7] = MyDataReader.GetMySqlDateTime(39).ToString(); //Дата выезда
 
                 resultList.Add(str); //Получаем строку
+            }
+            MyDataReader.Close();
+
+            conn.Close();
+            return resultList;
+        }
+        
+
+        private List<string> getHeaders()
+        {
+            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;password=root;";
+
+            string query = $@"select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='forms'";
+
+            List<string> resultList = new List<string>();
+            MySqlConnection conn = new MySqlConnection(connectionStr);
+            MySqlCommand myCommand = new MySqlCommand(query, conn);
+            conn.Open();
+
+            MySqlDataReader MyDataReader;
+            MyDataReader = myCommand.ExecuteReader();
+
+            while (MyDataReader.Read())
+            {
+                resultList.Add(MyDataReader.GetString(0)); //Получаем строку
             }
             MyDataReader.Close();
 
@@ -225,8 +250,7 @@ namespace WindowsFormsApplication1121212
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            Form2 form = new Form2(doSelect(textBox1.Text));
+            Form2 form = new Form2(doSelect(textBox1.Text), getHeaders());
             form.ShowDialog();
 
         }
