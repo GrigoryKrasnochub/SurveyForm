@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1121212
 
         private void doInsert()
         {
-            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;";
+            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;password=root;";
             MySqlConnection conn = new MySqlConnection(connectionStr);
             conn.Open();
 
@@ -59,7 +59,7 @@ namespace WindowsFormsApplication1121212
 
         private List<string [] > doSelect(string surname)
         {
-            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;";
+            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;password=root;convert zero datetime=True";
 
             string query = $@"SELECT * FROM Forms WHERE surname='{surname}'";
 
@@ -73,16 +73,12 @@ namespace WindowsFormsApplication1121212
 
             while (MyDataReader.Read())
             {
-                string[] str = new string[8];
-                str[0] = MyDataReader.GetString(1); //Имя
-                str[1] = MyDataReader.GetString(2); //Фамилия
-                str[2] = MyDataReader.GetString(4); //День рождения
-                str[3] = MyDataReader.GetString(13); //Проездной документ
-                str[4] = MyDataReader.GetString(14); //Номер проездного
-                str[5] = MyDataReader.GetString(26); //Страна назначения
-                str[6] = MyDataReader.GetMySqlDateTime(38).ToString(); //Дата въезда
-                str[7] = MyDataReader.GetMySqlDateTime(39).ToString(); //Дата выезда
-
+                string[] str = new string[60];
+                for (int i = 0; i < str.Length; i++)
+                //for (int i = 0; i < 14; i++)
+                {
+                    str[i] = MyDataReader.GetString(i).ToString();
+                }
                 resultList.Add(str); //Получаем строку
             }
             MyDataReader.Close();
@@ -222,11 +218,34 @@ namespace WindowsFormsApplication1121212
                 e.Handled = true;
             }
         }
+        private List<string> getHeaders()
+        {
+            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;password=root;";
+
+            string query = $@"select COLUMN_NAME from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='forms'";
+
+            List<string> resultList = new List<string>();
+            MySqlConnection conn = new MySqlConnection(connectionStr);
+            MySqlCommand myCommand = new MySqlCommand(query, conn);
+            conn.Open();
+
+            MySqlDataReader MyDataReader;
+            MyDataReader = myCommand.ExecuteReader();
+
+            while (MyDataReader.Read())
+            {
+                resultList.Add(MyDataReader.GetString(0)); //Получаем строку 
+            }
+            MyDataReader.Close();
+
+            conn.Close();
+            return resultList;
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Form2 form = new Form2(doSelect(textBox1.Text));
+            Form2 form = new Form2(doSelect(textBox1.Text), getHeaders());
             form.ShowDialog();
 
         }
