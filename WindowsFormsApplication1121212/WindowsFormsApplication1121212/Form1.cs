@@ -59,7 +59,7 @@ namespace WindowsFormsApplication1121212
 
         private List<string [] > doSelect(string surname)
         {
-            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;password=root;convert zero datetime=True";
+            string connectionStr = "server=localhost;user=root;database=university_lab;CharSet=utf8;password=root;Convert Zero Datetime=True;Allow Zero Datetime=True;";
 
             string query = $@"SELECT * FROM Forms WHERE surname='{surname}'";
 
